@@ -1,6 +1,7 @@
 import {
   Button,
   HStack,
+  Heading,
   Image,
   List,
   ListItem,
@@ -21,6 +22,9 @@ const GenreList = ({ selectedGenre, onSelectGenre }: Props) => {
 
   return (
     <>
+      <Heading as="h2" fontSize="2xl" marginBottom={2}>
+        Genres
+      </Heading>
       <List marginTop={3}>
         {isLoading && <Spinner />}
         {data.map((genre) => (
@@ -36,6 +40,8 @@ const GenreList = ({ selectedGenre, onSelectGenre }: Props) => {
                 colorScheme={genre.id === selectedGenre?.id ? "orange" : ""}
                 fontStyle={genre.id === selectedGenre?.id ? "italic" : "normal"}
                 fontSize={"lg"}
+                whiteSpace={"normal"}
+                textAlign={"left"}
                 variant="link"
               >
                 {genre.name}
